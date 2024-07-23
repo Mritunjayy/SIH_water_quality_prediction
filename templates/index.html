@@ -5,39 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* .div{
-            background-image: url("Screenshot\ 2023-11-23\ 124935.png");
-        } */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: aliceblue;
+            background-image: url("water.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+        .main-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .form-container {
+            width: 300px;
+            background-color: #fff;
+            border: 2px solid #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .form-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            z-index: 1;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .form-container h2 {
+            margin: 0;
+            padding: 0;
+            color: #333;
+            z-index: 2;
+            position: relative;
+        }
+        form {
+            position: relative;
+            z-index: 2;
+        }
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        button {
+            width: calc(50% - 10px);
+            padding: 10px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            position: relative;
+            z-index: 2;
+        }
+        button:first-of-type {
+            background-color: #4CAF50;
+        }
+        button:first-of-type:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        button:last-of-type {
+            background-color: #2196F3;
+        }
+        button:last-of-type:hover {
+            background-color: #0b7dda;
+            transform: translateY(-2px);
+        }
+        /* .div{
+            background-image: url("Screenshot\ 2023-11-23\ 124935.png");
+        } */
+        /* body { */
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
             height: 50vh;
             font-family: Arial, sans-serif;
-            background-image: url("Screenshot 2023-11-23 124935.png");
-        }
-       .form-container {
+            background-image: url("Screenshot 2023-11-23 124935.png"); */
+        /* } */
+       /* .form-container {
         width: 300px;
-        background-color: #65dd6f;
+        /* background-color: #65dd6f; */
+        /* background-color: burlywood;
+
         border: 5cm;
+        border-color: black;
         padding: 20px;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
         text-align: center;
         margin-top: 100px;
-        }
+        } */ 
+        /* .main-div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+        /* #lat{
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            align-items:center ;
+        } */
        
     </style>
 </head>
 <body>
+    <div class="main-div">
     <div class="form-container">
         <h2>Water Quality Prediction</h2>
     <form  method="post" id="lat" action="/predict">
-        <label for="quantity">Enter the latitude:</label>
-        <input type="number" id="quantity" name="quantity" step="any">
+        <label for="latiitude">Enter the latitude:</label>
+        <input type="number" id="latitude" name="quantity" placeholder="enter the latitutde" step="any">
         <br>
-        <label for="quantity">Enter the longitude:</label>
-        <input type="number" name="quantity" id="quantity" step="any">
+        <label for="longitude">Enter the longitude:</label>
+        <input type="number" name="quantity" id="longitude" placeholder="enter the longitude" step="any">
         <br>
         <button type="submit" value="predict" onclick="handleSubmit('/predict')" >Predict quality</button>
         <!-- input   -->
@@ -53,5 +158,6 @@
         
     </script>
     </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Well Construction Feasibility</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: aliceblue;
+            margin: 0;
+        }
+        .main-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .form-container {
+            width: 300px;
+            background-color: #fff;
+            border: 2px solid #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .form-container h2 {
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #2196F3;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #0b7dda;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <div class="form-container">
+            <h2>Well Construction Feasibility</h2>
+            <!-- <form method="post" action="/feasible">
+                <label for="latitude">Enter the latitude:</label>
+                <input type="number" id="latitude" name="latitude" placeholder="Enter latitude" step="any">
+                <br>
+                <label for="longitude">Enter the longitude:</label>
+                <input type="number" name="longitude" id="longitude" placeholder="Enter longitude" step="any">
+                <br>
+                <button type="submit" value="feasible">Check Feasibility</button>
+            </form> -->
+            <div id="result">
+                {% if result %}
+                    <p>{{ result }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
