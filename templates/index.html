@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .div{
+            background-image: url("Screenshot\ 2023-11-23\ 124935.png");
+        } */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            font-family: Arial, sans-serif;
+            background-image: url("Screenshot 2023-11-23 124935.png");
+        }
+       .form-container {
+        width: 300px;
+        background-color: #65dd6f;
+        border: 5cm;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        text-align: center;
+        margin-top: 100px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Water Quality Prediction</h2>
+    <form  method="post" id="lat" action="/predict">
+        <label for="quantity">Enter the latitude:</label>
+        <input type="number" id="quantity" name="quantity" step="any">
+        <br>
+        <label for="quantity">Enter the longitude:</label>
+        <input type="number" name="quantity" id="quantity" step="any">
+        <br>
+        <button type="submit" value="predict" onclick="handleSubmit('/predict')" >Predict quality</button>
+        <!-- input   -->
+        <button type="submit" onclick="handleSubmit('/feasible')"> predict well construction feasibility</button>
+        
+      </form>
+      <script>
+       function handleSubmit(action){
+        var Form = document.getElementById('lat');
+        Form.action = action;
+        Form.submit();
+       } 
+        
+    </script>
+    </div>
+</body>
+</html>
